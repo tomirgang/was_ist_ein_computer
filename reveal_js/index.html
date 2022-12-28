@@ -8,107 +8,1242 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+		<style>
+			section {
+				width: 100%;
+				aspect-ratio: 16 / 9;
+				border: 1px solid gray;
+			}
+
+			.wrapper {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				background-image: url("assets/Logo_vhs-LKRoth-quer-rgb.jpg");
+				background-repeat: no-repeat, no-repeat;
+				background-size: 20%;
+
+			}
+
+			.header {
+				display: table;
+				position: absolute;
+				background-color: darkgreen;
+				color: white;
+				top: 8%;
+				left: 5%;
+				width: 90%;
+				box-shadow: 10px 5px 5px green;
+				z-index: 10;
+			}
+
+			.decorator {
+				position: absolute;
+				z-index: 9;
+				width: 8%;
+				height: 18%;
+				top: 2%;
+				left: 80%;
+				background-color: black;
+				box-shadow: 10px 5px 5px grey;
+			}
+
+			.triangle {
+				position: absolute;
+				z-index: 9;
+				bottom: 0%;
+				left: 0%;
+				border-left: 40px solid darkgreen;
+				border-right: 40px solid transparent;
+				border-bottom: 40px solid darkgreen;
+				border-top: 40px solid transparent;
+				display: inline-block;
+			}
+
+			.bgimage {
+				position: absolute;
+				z-index: 7;
+				bottom: 65px;
+				right: 30px;
+				width: 100px;
+				height: 150px;
+				background-image: url("assets/background_esp.png");
+				background-size: 100% 100%;
+				opacity: 0.25;
+				transform: rotate(45deg);
+			}
+
+			.bgfooter {
+				position: absolute;
+				z-index: 6;
+				bottom: 0%;
+				right: 0%;
+				width: 100%;
+				height: 50px;
+				background-color: darkgreen;
+				opacity: 0.5;
+			}
+
+			.footer {
+				position: absolute;
+				z-index: 7;
+				bottom: 10px;
+				right: 100px;
+				font-size: 10pt;
+				text-align: right;
+			}
+
+			.content {
+				position: absolute;
+				z-index: 10;
+				left: 10%;
+				width: 80%;
+				top: 21%;
+				bottom: 75px;
+				display: flex;
+				align-items: center;
+        		justify-content: center;
+				flex-wrap: wrap;
+				font-size: 75%;
+			}
+
+			.content_left {
+				position: absolute;
+				z-index: 10;
+				left: 10%;
+				width: 45%;
+				top: 21%;
+				bottom: 75px;
+				display: flex;
+				align-items: center;
+        		justify-content: left;
+				flex-wrap: wrap;
+				text-align: left;
+				font-size: 75%;
+			}
+
+			.link {
+				font-size: 50%;
+				color: gray;
+			}
+
+			.title {
+				display: table-cell;
+				text-align: left;
+				padding-left: 20px;
+			}
+
+			.subtitle {
+				display: table-cell;
+				font-size: 50%;
+				text-align: right;
+				padding-left: 20px;
+				padding-right: 100px;
+			}
+
+			.image {
+				position: absolute;
+				text-overflow: wrap;
+				width: 22%;
+			}
+
+			.image img {
+				margin: unset;
+				object-fit: contain;
+			}
+
+			.image_right {
+				z-index: 8;
+				top: 22%;
+				right: 3%;
+				height: 65%;
+				width: 42%;
+			}
+
+			.image1 {
+				z-index: 7;
+				top: 22%;
+				right: 1%;
+				height: 25%;
+			}
+
+			.image2 {
+				z-index: 8;
+				top: 22%;
+				right: 22%;
+				height: 25%;
+			}
+
+			.image3 {
+				position: absolute;
+				z-index: 7;
+				top: 55%;
+				right: 22%;
+				height: 25%;
+			}
+
+			.image4 {
+				position: absolute;
+				z-index: 8;
+				top: 55%;
+				right: 1%;
+				height: 25%;
+			}
+
+			.image5 {
+				position: absolute;
+				z-index: 8;
+				top: 22%;
+				right: 42%;
+				height: 25%;
+			}
+
+			.image6 {
+				position: absolute;
+				z-index: 8;
+				top: 55%;
+				right: 42%;
+				height: 25%;
+			}
+
+			.copyright {
+				font-size: 25%;
+				color: darkgray;
+			}
+
+			.cite {
+				box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+				font-size: 65%;
+				font-style: italic;
+				width: 75%;
+				overflow: auto;
+			}
+
+			code {
+				font-size: 50%;
+			}
+
+			.MathJax {
+				font-size: 1.3em !important;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h1>Ist mein Auto ein Computer?</h1>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Kurs 23020</div>
+							<div class="subtitle">Thomas Irgang</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content">
+							Was ist ein Computer?
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
 				</section>
+
 				<section>
-					<section>
-						<table>
-							<tr>
-								<td><img src="actor1.png" alt="Sie wollen uns hier etwas erzählen?!?"></td>
-								<td><img src="actor2.png" alt="Wer sind sie eigentlich?"></td>
-							</tr>
-						</table>
-						<div style="font-size: 12px; color: darkgray">Bilder erstellt mit Draw.IO</div>
-					</section>
-					<section>
-						<table>
-							<tr>
-								<td width="70%" style="vertical-align: middle;">
-									<div>
-										<table style="border:1px solid white">
-											<tr>
-												<td style="vertical-align: middle;">
-													<img src="tom.png" width="100px">
-												</td>
-												<td>
-													<p>
-														Thomas Irgang
-													</p>
-													<hr>
-													<p style="font-size: smaller; font-style: italic;">
-														Project Manager,<br>
-														Software Engineer
-													</p>
-												</td>
-											</tr>
-										</table>
-									</div>
-								</td>
-								<td  style="vertical-align: middle;">
-									<div style="font-size: 24px;">
-										<ul>
-											<li>Studium: Mathematik & Informatik<br><span style="font-size: 16px;color: lightgray;">KU Eichstätt</span></li>
-											<li>wissenschaftlicher Mitarbeiter<br><span style="font-size: 16px;color: lightgray;">KU Eichstätt<br>Fernuni Hagen</span></li>
-											<li>Software Engineer<br><span style="font-size: 16px;color: lightgray;">Elektrobit<br>Automotive Software</span></li>
-											<li>Project Manager<br><span style="font-size: 16px;color: lightgray;">Elektrobit<br>Automotive Software</span></li>
-										</ul>
-									</div>
-								</td>
-							</tr>
-						</table>
-					</section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Inhalte</div>
+							<div class="subtitle">Was ist ein Computer?</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content">
+							<ul>
+								<li>Tag 1: Was ist ein Computer?</li>
+								<li>Tag 2: Wie funktioniert das Internet?</li>
+							</ul>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
 				</section>
+
 				<section>
-					<ul>
-						<li>Was ist ein Computer?</li>
-						<li>Was sind das Internet?</li>
-					</ul>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Tag 1</div>
+							<div class="subtitle">Was ist ein Computer?</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content">
+							<ul>
+								<li>Was ist ein Computer?</li>
+								<li>Computer Architektur</li>
+								<li>Daten Kodierung</li>
+								<li>Eingebettete Systeme</li>
+								<li>Algorithmen</li>
+							</ul>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
 				</section>
+
 				<section>
-					<section>
-						<h2>Was ist ein Computer?</h2>
-						<ul>
-							<li>Computer-Architektur</li>
-							<li>Daten-Kodierung</li>
-							<li>Was sind ein Algorithmus?</li>
-							<li>Embedded Devices</li>
-						</ul>
-					</section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Welches dieser Geräte ist ein Computer?</div>
+							<div class="subtitle"></div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left" style="font-size: 75%;">
+							<ul>
+								<li>Notebook</li>
+								<li>Smartphone</li>
+								<li>Sprachassistent</li>
+								<li>Raspberry Pi</li>
+								<li>Waschmaschine</li>
+								<li>Kaffeemaschine</li>
+							</ul>
+						</div>
+						<div class="image image1">
+							<img src="assets/960px-Lenovo_G500s_laptop-2903.jpg" height="100%">
+							<div class="copyright">Von © Raimond Spekking / CC BY-SA 4.0 (via Wikimedia Commons)</div>
+						</div>
+						<div class="image image2">
+							<img src="assets/Blackview_A60_Smartphone_Android_mobile_phone_front_face_lock_screen.jpg" height="100%">
+							<div class="copyright">Acabashi, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons</div>
+						</div>
+						<div class="image image6">
+							<img src="assets/raspi.jpg" height="100%">
+						</div>
+						<div class="image image3">
+							<img src="assets/Miele_Waschmaschine_06_(fcm).jpg" height="100%">
+							<div class="copyright">Frank C. Müller, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons</div>
+						</div>
+						<div class="image image5">
+							<img src="assets/Amazon_Echo_Dot_(RS03QR)-0479.jpg" height="100%">
+							<div class="copyright">Von © Raimond Spekking / CC BY-SA 4.0 (via Wikimedia Commons)</div>
+						</div>
+						<div class="image image4">
+							<img src="assets/Espressovollautomat_für_Heimgebrauch.jpg" height="100%">
+							<div class="copyright">Johann H. Addicks, CC BY-SA 3.0 <http://creativecommons.org/licenses/by-sa/3.0/>, via Wikimedia Commons</div>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
 				</section>
+
 				<section>
-					<section>
-						<h2>Was ist das Internet?</h2>
-						<ul>
-							<li>Computer-Netze</li>
-							<li>Client-Server Architektur</li>
-						</ul>
-					</section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Wikipedia: Computer</div>
+							<div class="subtitle">Was ist ein Computer?</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left" style="width: 75%;">
+							<div class="cite">
+								Ein Computer [...] ist ein Gerät, das mittels programmierbarer Rechenvorschriften Daten verarbeitet.
+							</div>
+							<div class="cite">
+								Computer sind heute in allen Bereichen des täglichen Lebens vorzufinden, meistens in spezialisierten Varianten, die auf einen vorliegenden Anwendungszweck zugeschnitten sind. So dienen integrierte Kleinstcomputer [...] zur Steuerung von Alltagsgeräten wie Waschmaschinen [...]; in modernen Automobilen dienen sie [...] zur Anzeige von Fahrdaten und steuern in „Fahrassistenten“ diverse Manöver selbst.
+							</div>
+						</div>
+						<div class="image image1">
+							<img src="assets/512px-Wikipedia_logo_(svg).svg.png" height="100%">
+							<div class="copyright">penubag, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons</div>
+							<div class="copyright">https://de.wikipedia.org/wiki/Computer</div>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
 				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Welches dieser Geräte ist ein Computer?</div>
+							<div class="subtitle"></div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left" style="font-size: 65%; width: 25%;">
+							Fast jedes moderne Gerät beinhaltet mindestens einen Computer in From eines integrierten Kleinstcomputer (Embedded Device)
+						</div>
+						<div class="image image1">
+							<img src="assets/960px-Lenovo_G500s_laptop-2903.jpg" height="100%">
+							<div class="copyright">Von © Raimond Spekking / CC BY-SA 4.0 (via Wikimedia Commons)</div>
+						</div>
+						<div class="image image2">
+							<img src="assets/Blackview_A60_Smartphone_Android_mobile_phone_front_face_lock_screen.jpg" height="100%">
+							<div class="copyright">Acabashi, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons</div>
+						</div>
+						<div class="image image6">
+							<img src="assets/raspi.jpg" height="100%">
+						</div>
+						<div class="image image3">
+							<img src="assets/Miele_Waschmaschine_06_(fcm).jpg" height="100%">
+							<div class="copyright">Frank C. Müller, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons</div>
+						</div>
+						<div class="image image5">
+							<img src="assets/Amazon_Echo_Dot_(RS03QR)-0479.jpg" height="100%">
+							<div class="copyright">Von © Raimond Spekking / CC BY-SA 4.0 (via Wikimedia Commons)</div>
+						</div>
+						<div class="image image4">
+							<img src="assets/Espressovollautomat_für_Heimgebrauch.jpg" height="100%">
+							<div class="copyright">Johann H. Addicks, CC BY-SA 3.0 <http://creativecommons.org/licenses/by-sa/3.0/>, via Wikimedia Commons</div>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Computer Architektur</div>
+							<div class="subtitle">Was ist ein Computer?</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left">
+							<ul>
+								<li>Fast alle aktuellen Computer verwenden die Von-Neumann-Architektur <br><span class="link">https://de.wikipedia.org/wiki/Von-Neumann-Architektur</span>
+								</li>
+								<li>Programme und Daten werden in einem gemeinsamen Speicher abgelegt</li>
+							</ul>
+						</div>
+						<div class="image image_right">
+							<img src="assets/Von_Neumann_architecture.svg" height="100%">
+							<div class="copyright">Chris-martin, Aeroid, CC BY-SA 3.0 <http://creativecommons.org/licenses/by-sa/3.0/>, via Wikimedia Commons</div>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Von-Neumann-Architektur</div>
+							<div class="subtitle">Computer Architektur</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left">
+							<ul>
+								<li>CPU:
+									<ul>
+										<li>Rechenwerk (ALU)</li>
+										<li>Steuerwerk (Control Unit)</li>
+									</ul>	
+								</li>
+								<li>Bus System:
+									<ul>
+										<li>Speicherwerk<br>(RAM, Festplatte)</li>
+										<li>I/O Unit<br>(Tastatur, Bildschirm)</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="image image_right">
+							<img src="assets/Von_Neumann_architecture.svg" height="100%">
+							<div class="copyright">Chris-martin, Aeroid, CC BY-SA 3.0 <http://creativecommons.org/licenses/by-sa/3.0/>, via Wikimedia Commons</div>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">CPU</div>
+							<div class="subtitle">Computer Architektur</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left">
+							<ul>
+								<li>Central Processing Unit (CPU)</li>
+								<li>z.B. Intel Core i, AMD Ryzen, Qualcomm Snapdragon, Apple M2</li>
+							</ul>
+						</div>
+						<div class="image image_right">
+							<img src="assets/512px-Intel_i7_8700K.jpg" height="100%">
+							<div class="copyright">ElooKoN, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons</div>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Arbeitsspeicher</div>
+							<div class="subtitle">Computer Architektur</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left">
+							<ul>
+								<li>Arbeitsspeicher (RAM)</li>
+								<li>Typische Größen: 8 GB, 16 GB</li>
+								<li>GB: Gigabyte (1000 MB)</li>
+								<li>Flüchtiger Speicher<br>verliert Daten ohne Strom</li>
+							</ul>
+						</div>
+						<div class="image image_right">
+							<img src="assets/2015_Pamięć_DDR3_1GB.jpg">
+							<div class="copyright">Jacek Halicki, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons</div>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Festplatte</div>
+							<div class="subtitle">Computer Architektur</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left">
+							<ul>
+								<li>Solid State Disk (SSD)</li>
+								<li>Typische Größen: 512 GB, 1 TB</li>
+								<li>TB: Terrabyte (1000GB)</li>
+								<li>Persistenter Speicher<br>behält Daten ohne Strom</li>
+							</ul>
+						</div>
+						<div class="image image_right">
+							<img src="assets/Samsung_980_PRO_PCIe_4.0_NVMe_SSD_1TB-top_PNr°0915.jpg">
+							<div class="copyright">D-Kuru, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons</div>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Festplatte</div>
+							<div class="subtitle">Computer Architektur</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left">
+							<ul>
+								<li>Hard Disk (HDD)</li>
+								<li>langsamer als SSDs, aber günstiger pro GB</li>
+								<li>Typische Größen: 2 TB, 4 TB</li>
+								<li>Persistenter Speicher<br>behält Daten ohne Strom</li>
+							</ul>
+						</div>
+						<div class="image image_right">
+							<img src="assets/Maxtor_94098H6_Hard_Disk_A.jpg">
+							<div class="copyright">Christian Jansky, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons</div>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Was ist ein Programm?</div>
+							<div class="subtitle">Wie funktioniert ein Computer?</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left">
+							<ul>
+								<li>lineare Liste von Befehlen</li>
+								<li>auf dem persistenten Speicher (SSD, HDD) abgelegt</li>
+								<li>verarbeiten Daten von Eingabegeräten oder dem Speicher</li>
+							</ul>
+						</div>
+						<div class="image image_right">
+							<pre><code data-trim data-noescape>
+								from multiprocessing import cpu_count
+								
+								# get the number of logical cpu cores
+								n_cores = cpu_count()
+								# report the number of logical cpu cores
+								print(f'Number of Logical CPU cores: {n_cores}')
+							</code></pre>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Befehle</div>
+							<div class="subtitle">Wie funktioniert ein Computer?</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left">
+							<ul>
+								<li>CPU verarbeitet Befehle</li>
+								<li>Befehle aus dem RAM ausgeführt</li>
+								<li>Befehle werden linear abgearbeitet</li>
+								<li>Befehle haben eine geringe Komplexität (Addition, Subtraktion, Vergleich)</li>
+							</ul>
+						</div>
+						<div class="image image_right">
+							<img src="assets/Befehlssatz.png">
+							<div class="copyright">https://de.wikibooks.org/wiki/Assembler-Programmierung_f%C3%BCr_x86-Prozessoren/_Befehlsliste</div>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Programmausführung</div>
+							<div class="subtitle">Wie funktioniert ein Computer?</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left">
+							<ul>
+								<li>Befehle ins RAM geladen</li>
+								<li>CPU hat einen lokalen Status (Register, ...)</li>
+								<li>Befehle können Daten und CPU Status ändern</li>
+								<li>Sprungbefehle realisieren Entscheidungen</li>
+							</ul>
+						</div>
+						<div class="image image_right">
+							<img src="assets/01._Average_of_5_Numbers_(using_For_loop)_-_Start.svg.png">
+							<div class="copyright">Onlinecontributorguy, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons</div>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Binäre Daten</div>
+							<div class="subtitle">Datenkodierung</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left">
+							<ul>
+								<li>Computer kennen nur 0 und 1</li>
+								<li>Nachricht (Syntax): Folge von 0en und 1en</li>
+								<li>Information (Semantik): Bedeutung der Nachricht</li>
+							</ul>
+						</div>
+						<div class="image image_right">
+							<img src="assets/512px-Binary-code.png">
+							<div class="copyright">Graph+sas, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons</div>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Daten Darstellung</div>
+							<div class="subtitle">Datenkodierung</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left">
+							<ul>
+								<li>Programme interpretieren und verarbeiten Daten</li>
+								<li>Darstellung ist auf einen Anwendungsfall zugeschnitten</li>
+								<li>Darstellung ist unvollständig</li>
+							</ul>
+						</div>
+						<div class="image image_right">
+							<img src="assets/Darstellung.png">
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Word Dokumente</div>
+							<div class="subtitle">Datenkodierung</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left">
+							<ul>
+								<li>Word-Dokumente sind zip-Dateien</li>
+								<li>Experiment: Dokument in zip umbenennen</li>
+							</ul>
+						</div>
+						<div class="image" style="top: 20%; width: 44%; height: 60%; right: 1%; z-index: 7;">
+							<img src="assets/exp1_dokument.png">
+						</div>
+						<div class="image" style="top: 60%; width: 25%; height: 25%;right: 20%; z-index: 8;">
+							<img src="assets/exp1_xml.png">
+						</div>
+						<div class="image" style="top: 40%; width: 20%; height: 50%;right: 1%; z-index: 8;">
+							<img src="assets/exp1_content.png">
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Word Dokumente</div>
+							<div class="subtitle">Datenkodierung</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left">
+							<ul>
+								<li>Word-Dokumente können Änderungshistorie beinhalten</li>
+								<li>Word-Dokumente haben Metadaten</li>
+							</ul>
+						</div>
+						<div class="image image_right">
+							<img src="assets/exp1_metadata.png">
+							<div class="copyright">https://www.metadata2go.com/</div>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Dualsystem (Binärsystem)</div>
+							<div class="subtitle">Zahlensysteme</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left">
+							<ul>
+								<li>Wertigkeit der Stellen: $2^i$</li>
+								<li>$101_2 $<br>$= 1 * 4 + 0 * 2 + 1 * 1 $<br>$= 5_{10}$</li>
+							</ul>
+						</div>
+						<div class="image image1">
+							<img src="assets/Value_of_digits_in_the_Binary_numeral_system.svg.png">
+							<div class="copyright">User000name, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons</div>
+						</div>
+						<div class="image image4">
+							<img src="assets/Values_of_digits_in_the_Decimal_numeral_system.svg.png">
+							<div class="copyright">User000name, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons</div>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Hexadezimalsystem</div>
+							<div class="subtitle">Zahlensysteme</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left">
+							<ul>
+								<li>Wertigkeit der Stellen: $16^i$</li>
+								<li>$10_{16} = 1 * 16 + 0 * 1 = 16_{10}$</li>
+								<li>$AF_{16} $<br>$= 10 * 16 + 15 * 1 $<br>$= 175_{10}$</li>
+							</ul>
+						</div>
+						<div class="image image1">
+							<img src="assets/Hexadecimal_digit.png">
+							<div class="copyright">Hr.hanafi, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons</div>
+						</div>
+						<div class="image image4">
+							<img src="assets/Values_of_digits_in_the_Decimal_numeral_system.svg.png">
+							<div class="copyright">User000name, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons</div>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Binär in Hex</div>
+							<div class="subtitle">Zahlensysteme</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content">
+							<ul>
+								<li>maximaler Wert einer 4-stelligen Binärzahl:<br>$8+4+2+1=15$</li>
+								<li>maximaler Wert einer 1-stelligen Hexadezimalzahl:<br>$F_{16} = 15$</li>
+								<li>4 Zeichen binär $XXXX_2$<br>= 1 Zeichen hexadezimal</li>
+							</ul>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Binär in Hex</div>
+							<div class="subtitle">Zahlensysteme</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content">
+							<ul>
+								<li>Binär-Daten lassen sich kompakt Hexadezimal darstellen</li>
+								<li>$1100_{2}=12_{10}=A_{16}$</li>
+								<li>$1100 0101_{2}$ = 1100 0101 = $A5_{16}$</li>
+								<li>1 Byte = 8 Bit<br>$XX_{16}$ = $XXXX.XXXX_{2}$</li>
+							</ul>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Zweierkomplement</div>
+							<div class="subtitle">Zahlendarstellung</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content">
+							<ul>
+								<li>Zahlenraum:<br>$-2^{n-1}, ... , 0, ... -2^{n-1}$</li>
+								<li>8bit: -127...127</li>
+								<li>32bit: -4.294.967.295 ... 4.294. 967.295</li>
+								<li>Negative Zahlen: Binärwert invertieren und 1 addieren</li>
+								<li>4 = 0000 0100<br>invertiert: 1111 1011<br>1 addieren: 1111 1100 = -4</li>
+							</ul>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Gleitkommazahlen</div>
+							<div class="subtitle">Zahlendarstellung</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content">
+							<ul>
+								<li>Gleitkommazahlen müssen als Binärmuster darstellt werden</li>
+								<li>IEEE 754: $x=$$s$$2^e$$m$<br>
+								Vorzeichen s (1 bit), Exponent e, Mantisse m</li>
+								<li>32 Bit Darstellung: 3.14<br>=0 2^1 1.5700000524520874<br>= 0 1000.0000 10.0100.0111.1010.1110.00010</li>
+								<li>Dargestellte Zahl: 3.1399998664855957031250000</li>
+							</ul>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Textdarstellung</div>
+							<div class="subtitle">Datenkodierung</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content">
+							<ul>
+								<li>Kodierung pro Zeichen</li>
+								<li>einfachste Kodierung: ASCII<br>
+									ein Zeichen pro Byte, sehr kleiner Zeichenraum</li>
+								<li>aktueller Standard: UTF8<br>
+									variable Zeichenlänge, (fast) alle Zeichen darstellbar</li>
+							</ul>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Textdarstellung</div>
+							<div class="subtitle">Datenkodierung</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content">
+							<ul>
+								<li>Text: Hallo, Welt!<br>
+									ASCII: 48 61 6c 6c 6f 2c 20 57 65 6c 74 21<br>
+									UTF-16: 0048 0061 006c 006c 006f 002c 0020 0057 0065 006c 0074 0021</li>
+								<li>Zeichen 😊<br>
+									ASCII: Nicht darstellbar<br>
+									UTF-8: F0 9F 98 8A<br>
+									UTF-16: D83D DE0A</li>
+							</ul>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Bilder</div>
+							<div class="subtitle">Datenkodierung</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content">
+							<ul>
+								<li>Bilder werden als Pixel-Raster gespeichert</li>
+								<li>Eine Farbe pro Pixel</li>
+								<li>Verschiedenen Farbkodierungen, z.B. RGBA</li>
+								<li>Einfachste Bildkodierung: BMP</li>
+								<li>Übliche Formate:<br>jpg (verlustbehaftet, Fotos)<br>png (verlustfrei, Internet)</li>
+							</ul>
+						</div>
+						<div class="image image4" style="transform: rotate(-90deg);">
+							<img src="assets/Compression_Ephesos.jpg">
+							<div class="copyright">Guy vandegrift derived this from CNG, (uploaded by Odysses), CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons</div>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Bilder Metadaten</div>
+							<div class="subtitle">Datenkodierung</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left">
+							<ul>
+								<li>exif-Daten</li>
+								<li>GPS-Koordinaten</li>
+								<li>Kamera-Model</li>
+							</ul>
+						</div>
+						<div class="image image_right">
+							<img src="assets/exif.png">
+							<div class="copyright">https://www.pic2map.com/rttymb.html</div>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Wikipedia: Algorithmus</div>
+							<div class="subtitle">Algorithmen</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left" style="width: 75%;">
+							<div class="cite">
+								Ein Algorithmus ist eine eindeutige Handlungsvorschrift zur Lösung eines Problems oder einer Klasse von Problemen.
+							</div>
+							<ul style="font-size: 70%;">
+								<li>endlich beschreibbar (Finitheit)</li>
+								<li>jeder Schritt muss (eindeutig) ausführbar sein (Ausführbarkeit)</li>
+								<li>darf nur endlich viel Speicher verwenden (dynamische Finitheit)</li>
+								<li>darf nur endlich viele Schritte benötigen (Terminierung)</li>
+								<li>muss unter denselben Voraussetzungen das gleiche Ergebnis liefern (Determiniertheit)</li>
+								<li>der nächste Schritt muss zu jedem Zeitpunkt eindeutig sein (Determinismus)</li>
+							</ul>
+						</div>
+						<div class="image image1">
+							<img src="assets/512px-Wikipedia_logo_(svg).svg.png" height="100%">
+							<div class="copyright">penubag, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons</div>
+							<div class="copyright">https://de.wikipedia.org/wiki/Algorithmus</div>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Algorithmus in den Medien</div>
+							<div class="subtitle">Algorithmen</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left">
+							<ul>
+								<li>algorithmische Darstellung von Inhalten (z.B. Posts, Filme, ...)</li>
+								<li>Darstellung wird auf Unternehmensziel optimiert</li>
+							</ul>
+						</div>
+						<div class="image image_right">
+							<img src="assets/1983_CPA_5426_(1).png" height="100%">
+							<div class="copyright">Muḥammad ibn Mūsā al-Ḵwārizmī</div>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Eingebettete Systeme</div>
+							<div class="subtitle">Was ist ein Computer?</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left" style="width: 75%;">
+							<div class="cite">
+								<ul>
+									<li>(kompakter) (Einplatinen-) Computer</li>
+									<li>Spezielle Aufgabe</li>
+									<li>Eingabe sind häufig Sensoren (Temperatur, ..., Radar)</li>
+									<li>Ausgabe sind häufig Aktoren (Motoren, ...)</li>
+								</ul>
+							</div>
+						</div>
+						<div class="image image1">
+							<img src="assets/512px-Wikipedia_logo_(svg).svg.png" height="100%">
+							<div class="copyright">penubag, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons</div>
+							<div class="copyright">https://de.wikipedia.org/wiki/Eingebettetes_System</div>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Smarte Geräte</div>
+							<div class="subtitle">Was ist ein Computer?</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left" style="width: 65%">
+							<ul>
+								<li>Vorteile:
+									<ul>
+										<li>benutzerfreundlicher</li>
+										<li>fortgeschrittene Funktionen</li>
+									</ul>
+								</li>
+								<li>Nachteile:
+									<ul>
+										<li>Geräte "im Internet" (WLAN) brauchen Updates</li>
+										<li>Smarte Geräte sind häufig "Backends" angewiesen</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="image image1">
+							<img src="assets/Smart-plug.jpg" height="100%">
+							<div class="copyright">TBWABusted, CC BY 2.0 <https://creativecommons.org/licenses/by/2.0>, via Wikimedia Commons</div>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
 			</div>
 		</div>
-
 		<script src="dist/reveal.js"></script>
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
 		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-
+				width: 960,
+  				height: 540,
+				// Factor of the display size that should remain empty around
+				// the content
+  				margin: 0,
+  				// Bounds for smallest/largest possible scale to apply to content
+  				minScale: 0.2,
+  				maxScale: 3,
+				controls: true,
+				slideNumber: true,
+				mouseWheel: true,
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax2 ]
 			});
 		</script>
 	</body>

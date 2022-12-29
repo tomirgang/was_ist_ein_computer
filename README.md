@@ -62,17 +62,80 @@ Binärzahlen lassen sich kompakter und besser lesbar als Hexadezimalzahlen darst
 
 Die Binärzahl $1100_{2}=12_{10}=A_{16}$. Die Binärzahl $1100 0101_{2}$ = 1100 0101 = $A5_{16}$. Die Einheit Byte, die wir von MB, GB und TB kennen, sind acht Bit. Ein Byte lasst sich als acht Binärziffern oder 2 Hexadezimalziffern darstellen, $XX_{16}$ = $XXXX.XXXX_{2}$.
 
+CPUs werden auch nach ihrer Registergröße und Speicherbandbreite in X-Bit Systeme unterteilt. Heutige kleine Microcontroller sind 8bit oder 16bit Systeme. Aktuelle PCs sind 64bit Systeme und einige Jahre alte Rechner sind häufig noch 32bit Systeme. Diese Speicherbandbreite bestimmt die maximale RAM Größe. 32bit Systeme können maximal 4 GB RAM adressieren, 64bit Systeme können maximal 16 Exabyte, d.h. 16 Milliarden Gigabyte, RAM adressieren.
+
 ### Datenkodierung
 
-...
+Da Computer nur Binärzahlen verarbeiten können müssen alle Daten die mit Computern verarbeitet werden als Binärzahlen, d.h. Folgen von 0en und 1en, dargestellt werden. Für die Darstellung von Grunddatentypen haben sich Standards etabliert.
 
+Ganzzahlen werden häufig in der sogenannten Zweierkomplement-Darstellung gespeichert. Der Zahlenraum der dargestellt werden kann ist $-2^{n-1}, ... , 0, ... -2^{n-1}$, wobei n die Anzahl der Bits sind. Dei Anzahl der Bits orientiert sich an der Registergröße der CPU, z.B. 33-Bit, da diese Größe am effizientesten verarbeitet werden kann. Bei der Verwendung von 8 Bits (1 Byte) können die Werte von -127 bis 127 dargestellt werden. Bei der Verwendung von 32 Bits sind es schon -2.147.483.648 bis 2.147.483.648 und bei 64 Bits sind es -9.223.372.036.854.775.808 bis 9.223.372.036.854.775.808. Negative Zahlen werden kodiert als invertierter Binärwert der positiven Zahl plus 1. Für -4 und 8 Bit bedeutet dies:
 
+- 4 = 0000 0100
+- invertieren: 1111 1011
+- 1 addieren: 1111 1100
 
+Eine negative Zahl in dieser Darstellung lässt sich daran erkennen dass die höchstwertige Stelle 1 ist.
 
+Diese Kodierung kann in der Praxis zu Problemen führen. Zwei Beispiele dafür sind Youtube und Reddit. Youtube hatte Probleme als das Lied "Gangnam-Style" mehr als 2.147.483.648 betrachtet wurde, da der Zähler als vorzeichenbehaftete 32-Bit Zahl kodiert war. Reddit hatte kürzlich Probleme, nach dem 2.147.483.648sten Kommentar, da dort ein Index als vorzeichenbehaftete 32-Bit Zahl implementiert war.
 
+Gleitkommazahlen werden gewöhnlich nach IEE 754 kodiert. Dieser Standard sieht vor dass die Zahl als $x=$ $s$ $2^e$ $m$ dargestellt wird, wobei s das Vorzeichen ist, e der Exponent und m die Mantisse. Der kodierte Exponent ist der tatsächliche Exponent plus ein Biaswert, um negative Exponenten zu realisieren.
 
+Als 32-Bit IEE 754 Zahl wird 3.14 als $0$ $2^1$ $1.5700000524520874$ dargestellt. Binär ist das 0 1000.0000 10.0100.0111.1010.1110.00010, was zurück gerechnet 3.1399998664855957031250000 ist.
 
+Die Gleitkommadarstellung ist fast immer mit einem sehr kleinen Fehler verbunden, womit man sich aber einen sehr großen Zahlenbereich erkauft. Als Entwickler muss man sich jedoch dessen bewusst sein, da dies eine Fehlerquelle darstellt. Für präzise Berechnungen werden deshalb gerne andere, weniger effiziente, aber dafür fehlerfrei Darstellungen gewählt.
+
+Texte werden im Computer als Folgen von Buchstaben kodiert. Dabei wird jedem Buchstaben eine Binärzahl zugeordnet. Frühere wurde häufig ASCII als sehr einfache Zeichenkodierung gewählt. Dabei ist jedem Buchstaben eine Zahl zwischen 0 und 255 zugeordnet, d.h. jeder Buchstabe braucht 1 Byte Speicherplatz. Dies reicht für dei meisten Sprachen aus, jedoch bei weitem nicht für alle, und mehrsprachige Texte werden nur begrenzt unterstützt.
+
+Moderne Systeme verwenden häufig eine Unicode-Darstellung. Unicode ist ein Standard der das Ziel hat alle Zeichen aller Sprachen darzustellen, und noch einige mehr, wie zum Beispiel Emoticons. Die aktuell häufigste Zeichenkodierung ist UTF8, was eine auf Speichergröße optimierte Unicode Implementierung ist. Die häufigsten Zeichen werden dabei in ein Byte codiert, aber es gibt Präfixe die längere Zeichen einleiten.
+
+Der Text "Hallo, Welt!" ist:
+
+- als ASCII:  48 61 6c 6c 6f 2c 20 57 65 6c 74 21
+- als UTF8:   48 61 6c 6c 6f 2c 20 57 65 6c 74 21
+- als UTF-16: 0048 0061 006c 006c 006f 002c 0020 0057 0065 006c 0074 0021
+
+Das Zeichen 😊 ist:
+
+- als ASCII nicht darstellbar
+- als UTF-8: F0 9F 98 8A
+- als UTF-16: D83D DE0A
+
+Die UTF-16 Darstellung benötigt mehr Platz, ist aber effizienter zum Arbeiten mit Texten, da jedes Zeichen die selbe Länge hat und damit einfach zum x-ten Zeichen gesprungen werden kann und einzelne Zeichen unabhängig vom restlichen Text verändert werden können.
+
+Bilder werden im einfachsten Fall als zweidimensionale Tabelle von Farbpunkten gespeichert. Dabei ist jeder Tabelleneintrag ein Farbwert für den Bildpunkt. Für die Kodierung der Farbwerte kommen verschiedene Verfahren zum Einsatz. Ein geläufiges Verfahren ist RGBA. Dabei wir die Farbe als Rot-, Grün- und Blau-Anteil gespeichert, je ein Bit, und ein Bit für den Transparenzwert. Die einfachst Datei-Bildkodierung ist BMP. Bei BMP wird eine Farbpalette erstellt und dann jeder Rasterwert als Index der Tabelle gespeichert.
+
+Heute übliche Bild-Formate sind JPG, eine verlustbehaftete Bildkompression, die häufig für Fotos verwendet wir, und PNG, eine verlustfreie Bildkompression die Transparenz unterstützt und gerne im Internet verwendet wird.
+
+Beim Arbeiten mit Bildern sollte man beachten dass heutige Bildformate verschiedenste Metadaten, die sogenannten EXIF-Daten, beinhalten. Diese Daten können sehr hilfreich sein für die spätere Weiterverarbeitung, können aber auch sehr leicht Informationen weitergeben die man nicht weitergeben wollte. Smartphone Bilder haben unter anderem das Telefon-Model und die GPS-Koordinaten in ihren EXIF-Daten. Mit jedem veröffentlichten Foto teilt man damit auch welches Telefon-Model man verwendet und den genauen Standort wo man das Foto aufgenommen hat.
+
+### Was ist ein Algorithmus?
+
+Wikipedia definiert einen Algorithmus folgendermaßen:
+
+> Ein Algorithmus ist eine eindeutige Handlungsvorschrift zur Lösung eines Problems oder einer Klasse von Problemen.
+
+Die Informatik hat eine Reihe von Eigenschaften die ein Algorithmus erfüllen muss, damit ein Computer ihn ausführen kann:
+
+- Finitheit: Ein Algorithmus muss endlich beschreibbar sein.
+- Ausführbarkeit: Jeder Schritt des Algorithmus muss eindeutig ausführbar sein. Das bedeutet auch jeder Schritt muss so präzise beschrieben sein dass eindeutig ist was getan werden muss.
+- Dynamische Finitheit: Der Algorithmus darf nur endlich viel Speicher verwenden.
+- Terminierung: Der Algorithmus darf nur endlich viele Schritte benötigen.
+- Determiniertheit: Der Algorithmus muss unter denselben Voraussetzungen das gleiche Ergebnis liefern.
+- Determinismus: Der nächste Schritt des Algorithmus muss zu jedem Zeitpunkt eindeutig bestimmt sein.
+
+Wenn in den Medien von einem Algorithmus die Rede ist, geht es in der Regel um algorithmische Darstellung von Inhalten. Dies wird von den meisten Onlinediensten heute verwendet, und dabei geht es fast immer darum dass durch die Darstellung Unternehmensziele optimiert werden sollen.
+
+Ein Beispiel dafür sind die Facebook Timeline, die Posts von Freunden und Werbung, under der Benutzung psychologischer Forschungsergebnisse, so Darstellt das die Aufenthaltsdauer auf Facebook maximiert wird und die Wahrscheinlichkeit dass ein Nutzer auf Werbung klickt optimiert wird. Dies gilt jedoch nicht nur für Facebook, sondern auch für die meisten anderen Sozialen Medien und Video-Plattformen wie Youtube oder Netflix.
+
+### Embedded Devices, Smart Devices und IoT
+
+Ein eingebettetes System, engl. Embedded Device, ist ein kompakter Einplatinencomputer für eine spezielle Aufgabe. Dei Eingabegeräte von embedded Devices sind häufig Sensoren, zum Beispiel Temperatursensoren in einer Kaffeemaschine oder einer Heizungssteuerung oder Radarsensoren in eine Fahrzeugassistenzsystem. Die Ausgabegeräte von Embedded Devices sind gewöhnlich Aktoren, wie zum Beispiel Motoren im Auto oder Pumpen in der Kaffeemaschine.
+
+Smarte Geräte, engl. Smart Devices, sind eine Klasse von Geräte, aber nicht die einzigen, in denen eingebettete System verbaut sind. Diese werden verwendet um die Benutzerfreundlichkeit zu verbessern oder fortgeschrittene Funktionen zu realisieren. Smart Devices zeichnen sich häufig dadurch aus dass sie mit dem Internet verbunden sind, wodurch die Rechenleistung im Gerät gering sein kann, und das Gerät dadurch günstiger zu produzieren ist. 
+
+Die Nachteile die man sich dadurch einhandelt realisieren sich häufig erst nach einer Weile. Für jede Software werden über die Zeit Probleme gefunden, entweder in Form von Fehlern, oder in Form von Sicherheitslücken. Gerade bei Sicherheitslücken brauchen smarte Geräte Software-Updates, was kontinuierlich kosten auf Seite des Herstellers verursacht. Auch die "Backend"-Systeme, mit denen die smarten Geräte kommunizieren um ihre Funktionen zu erfüllen verursachen fortlaufend Aufwand und Kosten auf Seite des Herstellers. Damit smarte Geräte sicher und langfristig Betrieben werden können, und wirtschaftlich für den Hersteller sind, müssen sie fortlaufend diese laufenden Kosten wieder einspielen. Dies lässt sich nur durch Abo-Modelle langfristig umsetzen. Bei günstigen smarten Geräten, ohne laufende Kosten, ist absehbar dass ihr Verwendung nur zeitlich beschränkt möglich ist, da entweder der Hersteller den Support einstellt und die Backends abschaltet, oder bankrott geht.
 
 ## Tag 2: Wie funktioniert das Internet?
 
 Der zweite Teil des Kurses gibt einen Überblick über die Grundlagen des Internets.
+

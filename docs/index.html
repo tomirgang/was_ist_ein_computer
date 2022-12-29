@@ -148,6 +148,12 @@
 				text-overflow: wrap;
 			}
 
+			.link_inline {
+				font-size: 100%;
+				color: gray;
+				text-overflow: wrap;
+			}
+
 			.wrapper a {
 				color: gray;
 			}
@@ -1039,11 +1045,11 @@
 						<div class="content">
 							<ul>
 								<li>X-Bit entspricht der Größe der CPU Register</li>
-								<li>Ersten Rechner: 8-Bit (1 Byte)<br>
+								<li>Microcontroller: 8-Bit (1 Byte) / 16-Bit<br>
 									Heutige PCs: 64bit (alte PCs: 32bit)</li>
 								<li>X-Bit ist die Speicherbandbreite<br>
 									32bit = max. 4GB RAM<br>
-									64bit = max. 16 Exabyte (Milliarden Gigabyte) RAM</li>
+									64bit = max. 16 Exabyte (16 Milliarden Gigabyte) RAM</li>
 							</ul>
 						</div>
 						<div class="footer">
@@ -1087,10 +1093,42 @@
 							<ul>
 								<li>Zahlenraum:<br>$-2^{n-1}, ... , 0, ... -2^{n-1}$</li>
 								<li>8bit: -127...127</li>
-								<li>32bit: -4.294.967.295 ... 4.294. 967.295</li>
+								<li>32bit: -2.147.483.648 ... 2.147.483.648</li>
 								<li>Negative Zahlen: Binärwert invertieren und 1 addieren</li>
 								<li>4 = 0000 0100<br>invertiert: 1111 1011<br>1 addieren: 1111 1100 = -4</li>
 							</ul>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Grenzen der Darstellung</div>
+							<div class="subtitle">Binärdarstellung</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_left">
+							<ul>
+								<li>Grenzen der Darstellung können zu Problemen führen</li>
+								<li>Reddit: <a class="link_inline" href="https://www.golem.de/news/programmierung-reddit-kommentare-laufen-bei-32-bit-ueber-2212-170494.html">Reddit-Kommentare laufen bei 32-Bit über</a></li>
+								<li>Google: <a class="link_inline" href="https://www.heise.de/security/meldung/l-f-Integer-Ueberlauf-Gangnam-Style-2480061.html">l+f: Integer-Überlauf Gangnam-Style</a></li>
+							</ul>
+						</div>
+						<div class="image image1">
+							<img src="assets/Reddit.png">
+							<a class="copyright" href="https://www.golem.de/news/programmierung-reddit-kommentare-laufen-bei-32-bit-ueber-2212-170494.html">Reddit-Kommentare laufen bei 32-Bit über</a>
+						</div>
+						<div class="image image4">
+							<img src="assets/heise_google.png">
+							<a class="copyright" href="https://www.heise.de/security/meldung/l-f-Integer-Ueberlauf-Gangnam-Style-2480061.html">l+f: Integer-Überlauf Gangnam-Style</a>
 						</div>
 						<div class="footer">
 							Kurs 23020 - Was ist ein Computer?<br/>
@@ -1113,7 +1151,8 @@
 							<ul>
 								<li>Gleitkommazahlen müssen als Binärmuster darstellt werden</li>
 								<li>IEEE 754: $x=$$s$$2^e$$m$<br>
-								Vorzeichen s (1 bit), Exponent e, Mantisse m</li>
+								Vorzeichen s (1 bit), Exponent e, Mantisse m<br>
+								negative Exponenten: Biaswert wird addiert</li>
 								<li>32 Bit Darstellung: 3.14<br>=0 2^1 1.5700000524520874<br>= 0 1000.0000 10.0100.0111.1010.1110.00010</li>
 								<li>Dargestellte Zahl: 3.1399998664855957031250000</li>
 							</ul>
@@ -1165,6 +1204,7 @@
 							<ul>
 								<li>Text: Hallo, Welt!<br>
 									ASCII: 48 61 6c 6c 6f 2c 20 57 65 6c 74 21<br>
+									UTF-8:  48 61 6c 6c 6f 2c 20 57 65 6c 74 21<br>
 									UTF-16: 0048 0061 006c 006c 006f 002c 0020 0057 0065 006c 0074 0021</li>
 								<li>Zeichen 😊<br>
 									ASCII: Nicht darstellbar<br>

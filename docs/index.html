@@ -26,7 +26,7 @@
 				height: 100%;
 				background-image: url("assets/Logo_vhs-LKRoth-quer-rgb.jpg");
 				background-repeat: no-repeat, no-repeat;
-				background-size: 20%;
+				background-size: 25%;
 
 			}
 
@@ -35,11 +35,12 @@
 				position: absolute;
 				background-color: darkgreen;
 				color: white;
-				top: 8%;
+				top: 10%;
 				left: 5%;
 				width: 90%;
 				box-shadow: 10px 5px 5px green;
 				z-index: 10;
+				font-size: 160%;
 			}
 
 			.decorator {
@@ -58,20 +59,20 @@
 				z-index: 9;
 				bottom: 0%;
 				left: 0%;
-				border-left: 40px solid darkgreen;
-				border-right: 40px solid transparent;
-				border-bottom: 40px solid darkgreen;
-				border-top: 40px solid transparent;
+				border-left: 80px solid darkgreen;
+				border-right: 80px solid transparent;
+				border-bottom: 80px solid darkgreen;
+				border-top: 80px solid transparent;
 				display: inline-block;
 			}
 
 			.bgimage {
 				position: absolute;
 				z-index: 7;
-				bottom: 65px;
-				right: 30px;
-				width: 100px;
-				height: 150px;
+				bottom: 130px;
+				right: 60px;
+				width: 200px;
+				height: 300px;
 				background-image: url("assets/background_esp.png");
 				background-size: 100% 100%;
 				opacity: 0.25;
@@ -84,7 +85,7 @@
 				bottom: 0%;
 				right: 0%;
 				width: 100%;
-				height: 50px;
+				height: 100px;
 				background-color: darkgreen;
 				opacity: 0.5;
 			}
@@ -92,9 +93,9 @@
 			.footer {
 				position: absolute;
 				z-index: 7;
-				bottom: 10px;
-				right: 100px;
-				font-size: 10pt;
+				bottom: 20px;
+				right: 200px;
+				font-size: 20pt;
 				text-align: right;
 			}
 
@@ -109,7 +110,21 @@
 				align-items: center;
         		justify-content: center;
 				flex-wrap: wrap;
-				font-size: 75%;
+				font-size: 125%;
+			}
+
+			.content_section {
+				position: absolute;
+				z-index: 10;
+				left: 10%;
+				width: 80%;
+				top: 21%;
+				bottom: 75px;
+				display: flex;
+				align-items: center;
+        		justify-content: center;
+				flex-wrap: wrap;
+				font-size: 150%;
 			}
 
 			.content_left {
@@ -124,11 +139,16 @@
         		justify-content: left;
 				flex-wrap: wrap;
 				text-align: left;
-				font-size: 75%;
+				font-size: 125%;
 			}
 
 			.link {
-				font-size: 50%;
+				font-size: 70%;
+				color: gray;
+				text-overflow: wrap;
+			}
+
+			.wrapper a {
 				color: gray;
 			}
 
@@ -212,24 +232,20 @@
 			}
 
 			.copyright {
-				font-size: 25%;
+				font-size: 50%;
 				color: darkgray;
 			}
 
 			.cite {
 				box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-				font-size: 65%;
+				font-size: 80%;
 				font-style: italic;
 				width: 75%;
 				overflow: auto;
 			}
 
 			code {
-				font-size: 50%;
-			}
-
-			.MathJax {
-				font-size: 1.3em !important;
+				font-size: 100%;
 			}
 		</style>
 	</head>
@@ -246,7 +262,7 @@
 						<div class="triangle"></div>
 						<div class="bgimage"></div>
 						<div class="bgfooter"></div>
-						<div class="content">
+						<div class="content_section">
 							Was ist ein Computer?
 						</div>
 						<div class="footer">
@@ -266,9 +282,9 @@
 						<div class="triangle"></div>
 						<div class="bgimage"></div>
 						<div class="bgfooter"></div>
-						<div class="content">
+						<div class="content_section">
 							<ul>
-								<li>Tag 1: Was ist ein Computer?</li>
+								<li style="font-weight: bolder;">Tag 1: Was ist ein Computer?</li>
 								<li>Tag 2: Wie funktioniert das Internet?</li>
 							</ul>
 						</div>
@@ -315,7 +331,7 @@
 						<div class="triangle"></div>
 						<div class="bgimage"></div>
 						<div class="bgfooter"></div>
-						<div class="content_left" style="font-size: 75%;">
+						<div class="content_left">
 							<ul>
 								<li>Notebook</li>
 								<li>Smartphone</li>
@@ -376,7 +392,7 @@
 						<div class="image image1">
 							<img src="assets/512px-Wikipedia_logo_(svg).svg.png" height="100%">
 							<div class="copyright">penubag, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons</div>
-							<div class="copyright">https://de.wikipedia.org/wiki/Computer</div>
+							<a class="copyright" href="https://de.wikipedia.org/wiki/Computer">https://de.wikipedia.org/wiki/Computer</a>
 						</div>
 						<div class="footer">
 							Kurs 23020 - Was ist ein Computer?<br/>
@@ -395,7 +411,7 @@
 						<div class="triangle"></div>
 						<div class="bgimage"></div>
 						<div class="bgfooter"></div>
-						<div class="content_left" style="font-size: 65%; width: 25%;">
+						<div class="content_left" style="width: 25%;">
 							Fast jedes moderne Gerät beinhaltet mindestens einen Computer in From eines integrierten Kleinstcomputer (Embedded Device)
 						</div>
 						<div class="image image1">
@@ -438,7 +454,7 @@
 						<div class="triangle"></div>
 						<div class="bgimage"></div>
 						<div class="bgfooter"></div>
-						<div class="content">
+						<div class="content_section">
 							Computer Architektur
 						</div>
 						<div class="footer">
@@ -460,7 +476,8 @@
 						<div class="bgfooter"></div>
 						<div class="content_left">
 							<ul>
-								<li>Fast alle aktuellen Computer verwenden die Von-Neumann-Architektur <br><span class="link">https://de.wikipedia.org/wiki/Von-Neumann-Architektur</span>
+								<li>Fast alle aktuellen Computer verwenden die Von-Neumann-Architektur <br>
+									<a class="link" href="https://de.wikipedia.org/wiki/Von-Neumann-Architektur">https://de.wikipedia.org/wiki/Von-Neumann-Architektur</a>
 								</li>
 								<li>Programme und Daten werden in einem gemeinsamen Speicher abgelegt</li>
 							</ul>
@@ -553,9 +570,10 @@
 						<div class="content_left">
 							<ul>
 								<li>Arbeitsspeicher (RAM)</li>
+								<li>Flüchtiger Speicher<br>verliert Daten ohne Strom</li>
+								<li>Typische Geschwindigkeit: ~15 GB/s</li>
 								<li>Typische Größen: 8 GB, 16 GB</li>
 								<li>GB: Gigabyte (1000 MB)</li>
-								<li>Flüchtiger Speicher<br>verliert Daten ohne Strom</li>
 							</ul>
 						</div>
 						<div class="image image_right">
@@ -572,7 +590,7 @@
 				<section>
 					<div class="wrapper">
 						<div class="header">
-							<div class="title">Festplatte</div>
+							<div class="title">SSD</div>
 							<div class="subtitle">Computer Architektur</div>
 						</div>
 						<div class="decorator"></div>
@@ -582,6 +600,7 @@
 						<div class="content_left">
 							<ul>
 								<li>Solid State Disk (SSD)</li>
+								<li>Typische Geschwindigkeit: ~2.5 GB/s</li>
 								<li>Typische Größen: 512 GB, 1 TB</li>
 								<li>TB: Terrabyte (1000GB)</li>
 								<li>Persistenter Speicher<br>behält Daten ohne Strom</li>
@@ -612,6 +631,7 @@
 							<ul>
 								<li>Hard Disk (HDD)</li>
 								<li>langsamer als SSDs, aber günstiger pro GB</li>
+								<li>Typische Geschwindigkeit: ~0.5 GB/s</li>
 								<li>Typische Größen: 2 TB, 4 TB</li>
 								<li>Persistenter Speicher<br>behält Daten ohne Strom</li>
 							</ul>
@@ -637,7 +657,7 @@
 						<div class="triangle"></div>
 						<div class="bgimage"></div>
 						<div class="bgfooter"></div>
-						<div class="content">
+						<div class="content_section">
 							Wie arbeitet ein Computer?
 						</div>
 						<div class="footer">
@@ -722,8 +742,9 @@
 						<div class="bgfooter"></div>
 						<div class="content_left">
 							<ul>
-								<li>Befehle ins RAM geladen</li>
 								<li>CPU hat einen lokalen Status (Register, ...)</li>
+								<li>Programm Counter (PC) zeigt auf den aktuellen Befehl</li>
+								<li>Befehle ins RAM geladen</li>
 								<li>Befehle können Daten und CPU Status ändern</li>
 								<li>Sprungbefehle realisieren Entscheidungen</li>
 							</ul>
@@ -749,7 +770,7 @@
 						<div class="triangle"></div>
 						<div class="bgimage"></div>
 						<div class="bgfooter"></div>
-						<div class="content">
+						<div class="content_section">
 							Datenkodierung
 						</div>
 						<div class="footer">
@@ -876,6 +897,26 @@
 				<section>
 					<div class="wrapper">
 						<div class="header">
+							<div class="title">Was ist ein Computer?</div>
+							<div class="subtitle">Datenkodierung</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_section">
+							Zahlensysteme
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
 							<div class="title">Dualsystem (Binärsystem)</div>
 							<div class="subtitle">Zahlensysteme</div>
 						</div>
@@ -988,8 +1029,55 @@
 				<section>
 					<div class="wrapper">
 						<div class="header">
+							<div class="title">X-Bit Systeme</div>
+							<div class="subtitle">Zahlensysteme</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content">
+							<ul>
+								<li>X-Bit entspricht der Größe der CPU Register</li>
+								<li>Ersten Rechner: 8-Bit (1 Byte)<br>
+									Heutige PCs: 64bit (alte PCs: 32bit)</li>
+								<li>X-Bit ist die Speicherbandbreite<br>
+									32bit = max. 4GB RAM<br>
+									64bit = max. 16 Exabyte (Milliarden Gigabyte) RAM</li>
+							</ul>
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
+							<div class="title">Was ist ein Computer?</div>
+							<div class="subtitle">Datenkodierung</div>
+						</div>
+						<div class="decorator"></div>
+						<div class="triangle"></div>
+						<div class="bgimage"></div>
+						<div class="bgfooter"></div>
+						<div class="content_section">
+							Datenkodierung als Binärzahlen
+						</div>
+						<div class="footer">
+							Kurs 23020 - Was ist ein Computer?<br/>
+							Thomas Irgang, thomas@irgang.eu
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="wrapper">
+						<div class="header">
 							<div class="title">Zweierkomplement</div>
-							<div class="subtitle">Zahlendarstellung</div>
+							<div class="subtitle">Binärdarstellung</div>
 						</div>
 						<div class="decorator"></div>
 						<div class="triangle"></div>
@@ -1015,7 +1103,7 @@
 					<div class="wrapper">
 						<div class="header">
 							<div class="title">Gleitkommazahlen</div>
-							<div class="subtitle">Zahlendarstellung</div>
+							<div class="subtitle">Binärdarstellung</div>
 						</div>
 						<div class="decorator"></div>
 						<div class="triangle"></div>
@@ -1041,7 +1129,7 @@
 					<div class="wrapper">
 						<div class="header">
 							<div class="title">Textdarstellung</div>
-							<div class="subtitle">Datenkodierung</div>
+							<div class="subtitle">Binärdarstellung</div>
 						</div>
 						<div class="decorator"></div>
 						<div class="triangle"></div>
@@ -1067,7 +1155,7 @@
 					<div class="wrapper">
 						<div class="header">
 							<div class="title">Textdarstellung</div>
-							<div class="subtitle">Datenkodierung</div>
+							<div class="subtitle">Binärdarstellung</div>
 						</div>
 						<div class="decorator"></div>
 						<div class="triangle"></div>
@@ -1095,7 +1183,7 @@
 					<div class="wrapper">
 						<div class="header">
 							<div class="title">Bilder</div>
-							<div class="subtitle">Datenkodierung</div>
+							<div class="subtitle">Binärdarstellung</div>
 						</div>
 						<div class="decorator"></div>
 						<div class="triangle"></div>
@@ -1159,7 +1247,7 @@
 						<div class="triangle"></div>
 						<div class="bgimage"></div>
 						<div class="bgfooter"></div>
-						<div class="content">
+						<div class="content_section">
 							Was ist ein Algorithmus?
 						</div>
 						<div class="footer">
@@ -1183,13 +1271,13 @@
 							<div class="cite">
 								Ein Algorithmus ist eine eindeutige Handlungsvorschrift zur Lösung eines Problems oder einer Klasse von Problemen.
 							</div>
-							<ul style="font-size: 70%;">
-								<li>endlich beschreibbar (Finitheit)</li>
-								<li>jeder Schritt muss (eindeutig) ausführbar sein (Ausführbarkeit)</li>
-								<li>darf nur endlich viel Speicher verwenden (dynamische Finitheit)</li>
-								<li>darf nur endlich viele Schritte benötigen (Terminierung)</li>
-								<li>muss unter denselben Voraussetzungen das gleiche Ergebnis liefern (Determiniertheit)</li>
-								<li>der nächste Schritt muss zu jedem Zeitpunkt eindeutig sein (Determinismus)</li>
+							<ul style="font-size: 80%;">
+								<li>Finitheit: endlich beschreibbar</li>
+								<li>Ausführbarkeit: jeder Schritt muss (eindeutig) ausführbar sein</li>
+								<li>Dynamische Finitheit: darf nur endlich viel Speicher verwenden</li>
+								<li>Terminierung: darf nur endlich viele Schritte benötigen</li>
+								<li>Determiniertheit: muss unter denselben Voraussetzungen das gleiche Ergebnis liefern</li>
+								<li>Determinismus: der nächste Schritt muss zu jedem Zeitpunkt eindeutig sein</li>
 							</ul>
 						</div>
 						<div class="image image1">
@@ -1241,7 +1329,7 @@
 						<div class="triangle"></div>
 						<div class="bgimage"></div>
 						<div class="bgfooter"></div>
-						<div class="content">
+						<div class="content_section">
 							Embedded Devices, Smart Devices und IoT
 						</div>
 						<div class="footer">
@@ -1334,7 +1422,8 @@
 							<div class="image" style="width: 60%;">
 								<img src="assets/512px-Personal_computer,_exploded.svg.png">
 								<div class="copyright">Gustavb, CC BY-SA 3.0 <http://creativecommons.org/licenses/by-sa/3.0/>, via Wikimedia Commons</div>
-							</div>
+								<a class="link" href="tag2.html">Tag 2</a>
+							</div>							
 						</div>
 						<div class="image image_right">
 							<img src="assets/Question_mark_trio.png" height="100%">
@@ -1357,8 +1446,8 @@
 		<script>
 			Reveal.initialize({
 				hash: true,
-				width: 960,
-  				height: 540,
+				width: 1920,
+  				height: 1080,
 				// Factor of the display size that should remain empty around
 				// the content
   				margin: 0,
